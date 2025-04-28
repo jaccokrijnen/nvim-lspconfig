@@ -165,14 +165,26 @@ return {
       texlab = {
         rootDirectory = nil,
         build = {
-          executable = 'latexmk',
-          args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '%f' },
-          onSave = false,
+          executable = 'tectonic',
+          args = { 
+            "-X",
+            "compile",
+            "%f",
+            "--synctex",
+            "--keep-logs",
+            "--keep-intermediates"
+          },
+          onSave = true,
           forwardSearchAfter = false,
         },
+        auxDirectory = '.',
         forwardSearch = {
-          executable = nil,
-          args = {},
+          executable = 'zathura',
+          args = {
+            "--synctex-forward",
+            "%l:1:%f",
+            "%p"
+          },
         },
         chktex = {
           onOpenAndSave = false,
