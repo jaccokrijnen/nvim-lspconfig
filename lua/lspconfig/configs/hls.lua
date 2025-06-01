@@ -2,7 +2,7 @@ local util = require 'lspconfig.util'
 
 return {
   default_config = {
-    cmd = { 'haskell-language-server-wrapper', '--lsp' },
+    cmd = { 'haskell-language-server', '--lsp' },
     filetypes = { 'haskell', 'lhaskell' },
     root_dir = util.root_pattern('hie.yaml', 'stack.yaml', 'cabal.project', '*.cabal', 'package.yaml'),
     single_file_support = true,

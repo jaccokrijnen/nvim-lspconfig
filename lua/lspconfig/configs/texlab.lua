@@ -174,7 +174,7 @@ return {
             "--keep-logs",
             "--keep-intermediates"
           },
-          onSave = true,
+          onSave = false,
           forwardSearchAfter = false,
         },
         auxDirectory = '.',
